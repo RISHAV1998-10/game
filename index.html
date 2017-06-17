@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="img.png" rel="icon" type="image/x-icon" />
 		<title>GOM</title>
 		<style type="text/css">
+			body{
+				background:url(14.jpg) ;
+			}
 			#heading{
 				text-align:center;
-				
-				
-			
+				color:#fff;
 			}
+			
 			#memory_board{
 				background:#C0C0C0;
 				border:#000 solid 1px;
@@ -18,7 +21,7 @@
 				margin:0px auto;
 			}
 			#memory_board>div{
-				background:#808080;
+				background:url(card.jpg) 50px 50px;
 				border:#000 solid 1px;
 				float:left;
 				width:50px;
@@ -29,6 +32,7 @@
 				cursor:pointer;
 				text-align:center;
 			}
+	
 		</style>
 		<script>
 			var memory_array=['A','A','B','B','C','C','D','D','E','E','F','F','G','G','H','H'];
@@ -53,7 +57,7 @@
 				memory_array.memory_title_shuffle();
 				for(var i=0;i<memory_array.length;i++)
 				{
-					output+='<div id="title_'+i+'" onclick="memoryFlipTitle(this,\''+memory_array[i]+'\')"></div>';
+					output+='<div id="title_'+i+'" class=".flip3D" onclick="memoryFlipTitle(this,\''+memory_array[i]+'\')"></div>';
 				}
 				document.getElementById('memory_board').innerHTML=output;
 			}
@@ -89,9 +93,9 @@
 							{
 								var tile_1=document.getElementById(memory_title_ids[0]);
 								var tile_2=document.getElementById(memory_title_ids[1]);
-								tile_1.style.background='#808080';
+								tile_1.style.background='url(card.jpg) 50px 50px';
 								tile_1.innerHTML="";
-								tile_2.style.background='#808080';
+								tile_2.style.background='url(card.jpg)  50px 50px';
 								tile_2.innerHTML="";
 								memory_values=[];
 								memory_title_ids=[];
